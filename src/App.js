@@ -1,11 +1,12 @@
 import React from "react";
 import { createGlobalStyle } from 'styled-components';
 import './App.css';
-import TodoDate from "./components/TodoDate";
-import TodoTemplate from "./components/TodoTemplate";
+import Todobackground from "./todolist/Todobackground";
+import TodoHeader from "./todolist/TodoHeader";
+import TodoList from "./todolist/TodoList";
 const GlobalStyle = createGlobalStyle`
   body {
-    background: gray;
+    background: #425364;
   }
 `;
 
@@ -14,11 +15,11 @@ function App() {
   return (
     <>
     <GlobalStyle/>
-    <TodoTemplate>
-      <TodoDate/>
-    </TodoTemplate>
+    <Todobackground>
+      <TodoHeader></TodoHeader>
+      <TodoList></TodoList>
+    </Todobackground>
     </>
-
   );
 }
 
