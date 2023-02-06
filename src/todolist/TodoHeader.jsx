@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 const TodoHeaderBackground = styled.div`
       h1 {
@@ -22,6 +22,7 @@ const dayIs = ['일', '월', '화', '수', '목', '금', '토'];
 const nowDay = dayIs[new Date().getDay()];
 
 export default function TodoHeader() {
+  const [days, setDays] = useState();
   return (
     <>
       <TodoHeaderBackground>
