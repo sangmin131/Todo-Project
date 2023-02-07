@@ -4,6 +4,7 @@ import styles from './Header.module.css'
 import { HiMoon, HiSun } from 'react-icons/hi'
 
 export default function Header({filters, filter, onFilterChange}) {
+  
   const {darkMode, toggleDarkMode} = useDarkMode();
   return (
     <header className={styles.header}>
