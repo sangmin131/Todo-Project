@@ -13,7 +13,7 @@ export default function Todo({ todo, onUpdate, onDelete }) {
         checked={status === 'completed'}
         onChange={handleChange} />
       <label className={styles.text} 
-      hemlFor='checkbox'>{text}</label>
+      hemlfor='checkbox'>{text}</label>
   <span className={styles.icon}>
   <button onClick={handleDelete} className={styles.button}>
         <FaRegTrashAlt />
