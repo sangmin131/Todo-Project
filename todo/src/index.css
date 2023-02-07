@@ -66,3 +66,29 @@ button{
 ::-webkit-scrollbar-thumb:hover{
   background-color: var(--color-accent);
 }
+.timer{
+  font-size: 40px;
+  color: #f16e03;
+}
+.inner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons{
+  font-size: 40px;
+ 
+}
+.icons{
+  animation: vibration 0.1s infinite;
+  transition: all 150ms ease-out;
+}
+
+@keyframes vibration {
+  from {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(-4deg);
+  }
+}
