@@ -22,10 +22,12 @@ const [todos, setTodos] = useState([
 { id: 3, text: '청소하기', completed: false },
 ]);
 
-const timezoneOffset = 9 * 60 * 60 * 1000;
-const now = new Date().getTime() + timezoneOffset;
-const endOfDay = (24 * 60 * 60 * 1000) - now % (24 * 60 * 60 * 1000);
-const [timeLeft, setTimeLeft] = useState(endOfDay);
+const timezoneOffset = 9 * 60 * 60 * 1000; // 한국시간 하려고 9 곱해줌 
+const now = new Date().getTime() + timezoneOffset; //기본시간에 사용자 PC의 시간대 설정이 한국이라면 '-540'을 리턴할 것입니다.
+//UTC 시간은 한국시간으로부터 -9시간(-540분)이기 때문입니다.
+
+const endOfDay = (24 * 60 * 60 * 1000) - now % (24 * 60 * 60 * 1000); // 종료일 - 한국시간 %(오늘 하루 남은 시간)
+const [timeLeft, setTimeLeft] = useState(endOfDay); // 시간 상태를 업데이트 해준
 
 useEffect(() => {
 const timer = setTimeout(() => {
@@ -36,7 +38,7 @@ return () => clearTimeout(timer);
 }, [timeLeft]);
 
 const addTodo = (text) => {
-let emoticon = emoticons[Math.floor(Math.random() * emoticons.length)];
+let emoticon = emoticons[Math.floor(Math.random() * emoticons.length)]; // 랜덤 숫자 소수점 버림 에 정수만큼 이모티콘 배열에있는 숫자를 가져옴 
 setTodos([...todos, { id: todos.length + 1, text: text + ' ' + emoticon, completed: false }]);
 };
 
